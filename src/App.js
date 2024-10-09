@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
-function App() {
+const App = () => {
+
+  const [title, setTitle] = useState("Hello");
+  const [isRed, setIsRed] = useState(false);
+
+  const count = title.length;
+
+  const vowelCount = () => {
+    let count = 0;
+    for (let i = 0; i < title.length; i++) {
+      if (
+        title[i] === "a" ||
+        title[i] === "i" ||
+        title[i] === "e" ||
+        title[i] === "o" ||
+        title[i] === "u"
+      ) {
+        count = count + 1;
+        // console.log(count);
+      }
+    }
+    return count;
+  };
+
+  console.log(vowelCount());
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1  style={{ color: title === "Hii" && isRed === true ? "red" : "black" }}>
+        {title} {count} {vowelCount()}
+      </h1>
+      <button
+        onClick={() => {
+          if (title === "Hello") {
+            setTitle("Hii");
+          } else {
+            setTitle("Hello");
+          }
+        }}
+      >
+        Change
+      </button>
+      <button
+        onClick={() => {
+          if (title === "Hii") {
+            setIsRed(!isRed);
+          } else {
+            setIsRed(false);
+          }
+        }}
+      >
+        Color Change
+      </button>
     </div>
   );
-}
+};
 
 export default App;

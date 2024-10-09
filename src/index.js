@@ -1,13 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+import "./index.css";
+// import App from './App';
+// import App2 from './App2';
+// import App3 from './App3.tsx';
+// import App4 from "./App4.tsx";
+// import App3_prac from "./App3_prac.tsx";
+// import App5 from "./App5.tsx";
+// import App6 from "./App6.tsx";
+// import App7 from "./App7.tsx";
+import FormValidation from "./FormValidation";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App3_prac /> */}
+    {/* <App4 /> */}
+    {/* <App6 /> */}
+    {/* <App7 /> */}
+    <FormValidation />
   </React.StrictMode>
 );
 
